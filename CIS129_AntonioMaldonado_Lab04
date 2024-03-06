@@ -1,0 +1,50 @@
+# Module 4 - Lab 4
+# Antonio Maldonado
+# 02/27/2023
+# This program uses user input to determine whether a store and its employees recieve a bonus based on its monthly sales and sale percent increase 
+
+
+#This main function houses our code 
+def main():
+    
+    #Initialize variables
+    
+    monthlySales = float(input('Enter the monthly sales: '))
+    salesIncrease = float(input('Enter percent of sales increase: '))
+    salesIncrease = salesIncrease/100
+    storeBonus = 0
+    empBonus = 0
+
+    #This code determines the store bonus
+    if monthlySales >= 110000:
+        storeBonus = 6000
+    elif monthlySales >= 100000:
+        storeBonus = 5000
+    elif monthlySales >= 90000:
+        storeBonus = 4000
+    elif monthlySales >= 80000:
+        storeBonus = 3000
+    else:
+        storeBonus = 0
+
+    #This code determines the employee bonus
+    if salesIncrease >= 0.05:
+        empBonus = 75
+    elif salesIncrease >= 0.04:
+        empBonus = 50
+    elif salesIncrease >= 0.03:
+        empBonus = 40  
+    else:
+        empBonus = 0
+    
+    #Print statements to display information of bonus'
+    print('The store bonus amount is $',storeBonus)
+    print('The employee bonus amount is $',empBonus)
+
+    if storeBonus == 6000 and empBonus == 75:
+        print('Congrats! You have reached the highest bonus amounts possible!')
+    elif storeBonus == 0 and empBonus == 0:
+        print('Better luck next month')
+    
+        
+main()
